@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض صور مطعم طوابين - شركة عتاد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .gallery-item {
+            background: var(--bg-card);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 2px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--brand-accent);
+        }
+        .gallery-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        .gallery-info {
+            padding: 20px;
+            text-align: right;
+        }
+        .gallery-info h4 {
+            color: var(--brand-dark);
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+        .gallery-info p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر العلوي -->
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">عتاد</h1>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#portfolio">سابقة الأعمال</a>
+                <a href="index.html#contact">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- رأس الصفحة -->
+    <section class="hero" style="padding: 60px 0 20px;">
+        <div class="container">
+            <span class="hero-badge">معرض تفاصيل المشروع</span>
+            <h2 style="font-size: 38px;">مطعم طوابين</h2>
+            <p>استعراض كامل لصور التوريدات، الأثاث، وحدات الإضاءة، والتجهيزات التراثية المنفذة خصيصاً للمشروع.</p>
+        </div>
+    </section>
+
+    <!-- شبكة الصور (جميع صور مطعم طوابين) -->
+    <section style="padding: 30px 0 90px;">
+        <div class="container">
+            <div class="gallery-grid">
+                
+                <!-- الصورة 1 -->
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('images/tawaben-1.jpg.jpeg');"></div>
+                    <div class="gallery-info">
+                        <h4>جلسات الممر الخارجي</h4>
+                        <p>تجهيز الممر الخارجي بطاولات ومقاعد متناسقة مع التغطية التراثية.</p>
+                    </div>
+                </div>
+
+                <!-- الصورة 2 -->
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('images/tawaben-2.jpg.jpeg');"></div>
+                    <div class="gallery-info">
+                        <h4>لوحة واجهة المطعم</h4>
+                        <p>تصميم وتنفيذ لوحة الإرشاد والترحيب الرئيسية بهوية مطعم طوابين.</p>
+                    </div>
+                </div>
+
+                <!-- الصورة 3 -->
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('images/tawaben-3.jpg.jpeg');"></div>
+                    <div class="gallery-info">
+                        <h4>منطقة الضيافة والمقاعد</h4>
+                        <p>ترتيب الجلسات الخارجية وتنسيق الطاولات مع أطباق الضيافة.</p>
+                    </div>
+                </div>
+
+                <!-- الصورة 4 -->
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('images/tawaben-4.jpg.jpeg');"></div>
+                    <div class="gallery-info">
+                        <h4>الدفايات والتجهيزات الخارجية</h4>
+                        <p>توفير وحدات التدفئة الخارجية لضمان راحة الزوار في مختلف الأجواء.</p>
+                    </div>
+                </div>
+
+                <!-- الصورة 5 -->
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('images/tawaben-5.jpg.jpeg');"></div>
+                    <div class="gallery-info">
+                        <h4>الطابع التراثي والأصالة</h4>
+                        <p>دمج العناصر المعمارية التراثية مع الأثاث العصري المريح.</p>
+                    </div>
+                </div>
+
+                <!-- الصورة 6 -->
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('images/tawaben-6.jpg.jpeg');"></div>
+                    <div class="gallery-info">
+                        <h4>وحدات الإضاءة المصنوعة من الرتان</h4>
+                        <p>تركيب مصابيح إضاءة معلقة مصنوعة يدوياً لإضفاء دفء وفخامة.</p>
+                    </div>
+                </div>
+
+                <!-- الصورة 7 -->
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('images/tawaben-7.jpg.jpeg');"></div>
+                    <div class="gallery-info">
+                        <h4>أدوات التقديم المخصصة</h4>
+                        <p>توريد الأطباق وأواني التقديم الفخارية المصممة خصيصاً للمطعم.</p>
+                    </div>
+                </div>
+
+                <!-- الصورة 8 -->
+                <div class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('images/tawaben-8.jpg.jpeg');"></div>
+                    <div class="gallery-info">
+                        <h4>منطقة البار والتجهيزات</h4>
+                        <p>تجهيز ركن تحضير المشروبات بالخامات والأرفف العملية الأنيقة.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- زر العودة -->
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html#portfolio" class="btn-outline">العودة إلى سابقة الأعمال</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 شركة عتاد للتوريدات والتصدير</p>
+    </footer>
+
+</body>
+</html>

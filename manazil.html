@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض مشروع منزال - عتاد للتوريدات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #c5a059;
+            --primary-dark: #a88746;
+            --secondary-color: #1a1a1a;
+            --dark-gray: #333333;
+            --light-gray: #f7f9fa;
+            --border-color: #eaeaea;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--light-gray); color: var(--dark-gray); line-height: 1.8; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+        header { background: var(--white); padding: 10px 0; position: fixed; width: 100%; top: 0; z-index: 9999; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 50px; width: auto; display: block; }
+        
+        nav ul { list-style: none; display: flex; gap: 25px; align-items: center; }
+        nav ul li a { text-decoration: none; color: var(--secondary-color); font-weight: 700; font-size: 15px; transition: var(--transition); }
+        nav ul li a:hover { color: var(--primary-color); }
+        .nav-btn { background: var(--primary-color); color: var(--white) !important; padding: 10px 20px; border-radius: 8px; }
+
+        .project-hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('manazil/cover.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); margin-top: 70px; padding: 0 20px; }
+        .project-hero h1 { font-size: 42px; font-weight: 900; margin-bottom: 15px; color: var(--primary-color); }
+        .project-hero p { font-size: 18px; max-width: 700px; color: #ddd; }
+
+        .gallery-section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 32px; font-weight: 800; color: var(--secondary-color); position: relative; display: inline-block; margin-bottom: 15px; }
+        .section-title h2::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 50px; height: 4px; background-color: var(--primary-color); border-radius: 2px; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .gallery-item { background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: var(--transition); cursor: pointer; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+        .gallery-img-box { height: 260px; width: 100%; overflow: hidden; background: #eee; }
+        .gallery-img-box img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .gallery-item:hover .gallery-img-box img { transform: scale(1.05); }
+
+        /* تعديلات تقنية قوية للـ Lightbox لضمان الاستجابة الكاملة للأعطال والتفاعل */
+        #lightbox { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.92); 
+            display: none; 
+            align-items: center; 
+            justify-content: center; 
+            z-index: 10000; 
+            padding: 20px; 
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        #lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        #lightbox img { 
+            max-width: 90%; 
+            max-height: 90%; 
+            border-radius: 8px; 
+            box-shadow: 0 5px 30px rgba(0,0,0,0.5); 
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        #lightbox.active img {
+            transform: scale(1);
+        }
+        #lightbox .close-btn { 
+            position: absolute; 
+            top: 25px; 
+            left: 30px; 
+            color: #fff; 
+            font-size: 30px; 
+            cursor: pointer; 
+            background: rgba(255,255,255,0.1); 
+            width: 45px; 
+            height: 45px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            transition: var(--transition);
+            z-index: 10001;
+        }
+        #lightbox .close-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .cta-section { background: var(--secondary-color); color: var(--white); text-align: center; padding: 60px 20px; margin-top: 40px; border-radius: 16px; }
+        .cta-section h3 { font-size: 28px; margin-bottom: 15px; color: var(--primary-color); }
+        .cta-section p { font-size: 16px; color: #ccc; margin-bottom: 25px; }
+
+        footer { background: #111; color: #888; padding: 40px 0; text-align: center; margin-top: 60px; }
+        .footer-logo-img { height: 40px; width: auto; margin-bottom: 10px; filter: brightness(0) invert(1); display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html">
+                <img src="logo.png" alt="ATAD Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="index.html#services">أقسامنا</a></li>
+                    <li><a href="index.html#portfolio">سابقة الأعمال</a></li>
+                    <li><a href="https://wa.me/201000000000" target="_blank" class="nav-btn"><i class="fa-brands fa-whatsapp"></i> تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project-hero">
+        <div>
+            <h1>مشروع منزال (الكافيه)</h1>
+            <p>استعراض لأعمال التوريد، التجهيز، ووحدات الإضاءة والأثاث المنفذة خصيصاً للمشروع.</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>صور المعرض والتشطيبات</h2>
+                <p>صور من موقع العمل تظهر جودة التوريدات والتفاصيل الدقيقة.</p>
+            </div>
+
+            <!-- شبكة الصور المرقمة -->
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('manazil/1.jpg')">
+                    <div class="gallery-img-box">
+                        <img src="manazil/1.jpg" alt="مشروع منازل 1" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80'">
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('manazil/2.jpg')">
+                    <div class="gallery-img-box">
+                        <img src="manazil/2.jpg" alt="مشروع منازل 2" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=80'">
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('manazil/3.jpg')">
+                    <div class="gallery-img-box">
+                        <img src="manazil/3.jpg" alt="مشروع منازل 3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80'">
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('manazil/4.jpg')">
+                    <div class="gallery-img-box">
+                        <img src="manazil/4.jpg" alt="مشروع منازل 4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80'">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3>هل تريد تجهيز مشروع مشابه؟</h3>
+                <p>نحن نوفر كافة التجهيزات والديكورات والتوريدات التجارية بأعلى جودة وشحن مباشر لدول الخليج.</p>
+                <a href="https://wa.me/201000000000" target="_blank" class="nav-btn" style="display: inline-block; text-decoration: none; font-size: 16px;"><i class="fa-brands fa-whatsapp"></i> اطلب استشارة لتجهيز مشروعك</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- نافذة تكبير الصور المحسنة تقنياً (Lightbox) -->
+    <div id="lightbox" onclick="closeLightbox(event)">
+        <span class="close-btn" onclick="forceClose(event)"><i class="fa-solid fa-xmark"></i></span>
+        <img id="lightbox-img" src="" alt="صورة مكبرة">
+    </div>
+
+    <footer>
+        <div class="container">
+            <a href="index.html">
+                <img src="logo.png" alt="ATAD Logo" class="footer-logo-img">
+            </a>
+            <p>جميع الحقوق محفوظة © 2026 لمؤسسة عتاد للتوريدات.</p>
+        </div>
+    </footer>
+
+    <script>
+        // دالة فتح المعرض بسلاسة
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // منع سكرول الخلفية والموقع مفتوح
+        }
+
+        // دالة الإغلاق عند الضغط على الخلفية السوداء
+        function closeLightbox(event) {
+            // يتم الإغلاق فقط لو الضغط حصل على خلفية الـ lightbox مش على الصورة نفسها
+            if (event.target.id === 'lightbox') {
+                hideLightbox();
+            }
+        }
+
+        // دالة الإغلاق القسري عند الضغط على زر الـ X
+        function forceClose(event) {
+            event.stopPropagation(); // منع تداخل الأحداث
+            hideLightbox();
+        }
+
+        // تنفيذ الإغلاق وإرجاع الوضع الطبيعي
+        function hideLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // إعادة تفعيل السكرول
+        }
+
+        // دعم زر Esc من الكيبورد للإغلاق السريع (احترافية تقنية عالية)
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                hideLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

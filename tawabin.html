@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تجهيزات مطعم طوابين - عتاد للتوريدات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #c5a059;
+            --primary-dark: #a88746;
+            --secondary-color: #1a1a1a;
+            --dark-gray: #333333;
+            --light-gray: #f7f9fa;
+            --border-color: #eaeaea;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--secondary-color); color: var(--white); line-height: 1.8; overflow-x: hidden; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+        header { background: var(--secondary-color); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 9999; border-bottom: 1px solid #333; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 32px; font-weight: 900; color: var(--primary-color); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--white); }
+        nav ul { list-style: none; display: flex; gap: 25px; align-items: center; }
+        nav ul li a { text-decoration: none; color: var(--white); font-weight: 700; font-size: 15px; transition: var(--transition); }
+        nav ul li a:hover { color: var(--primary-color); }
+        .nav-btn { background: var(--primary-color); color: var(--white) !important; padding: 10px 20px; border-radius: 8px; }
+        .nav-btn:hover { background: var(--primary-dark); }
+
+        .page-header { text-align: center; padding: 160px 0 30px; }
+        .page-header h1 { font-size: 40px; font-weight: 900; color: var(--primary-color); margin-bottom: 15px; }
+        .page-header p { color: #aaa; font-size: 16px; max-width: 600px; margin: 0 auto; }
+
+        /* قسم صدارة الغلاف */
+        .cover-section { margin-bottom: 50px; background: #222; border: 1px solid #333; border-radius: 16px; overflow: hidden; display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; align-items: center; padding: 30px; }
+        @media(max-width: 768px) { .cover-section { grid-template-columns: 1fr; } }
+        .cover-img { height: 350px; border-radius: 12px; overflow: hidden; background: #111; }
+        .cover-img img { width: 100%; height: 100%; object-fit: cover; }
+        .cover-info h2 { font-size: 30px; color: var(--primary-color); margin-bottom: 15px; font-weight: 800; }
+        .cover-info p { color: #ccc; margin-bottom: 25px; font-size: 16px; }
+
+        .restaurant-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .rest-card { background: #222; border-radius: 12px; overflow: hidden; border: 1px solid #333; transition: var(--transition); display: flex; flex-direction: column; text-align: center; }
+        .rest-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2); border-color: var(--primary-color); }
+        
+        .rest-img { height: 260px; width: 100%; background: #111; overflow: hidden; }
+        .rest-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .rest-card:hover .rest-img img { transform: scale(1.05); }
+        
+        .rest-body { padding: 20px; background: #1a1a1a; display: flex; flex-direction: column; gap: 12px; }
+        .rest-body h3 { font-size: 18px; font-weight: 800; color: var(--primary-color); margin: 0; }
+        
+        .order-rest-btn { background: var(--primary-color); color: var(--white); padding: 8px 15px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 700; transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+        .order-rest-btn:hover { background: var(--primary-dark); }
+
+        .back-home { text-align: center; margin-bottom: 80px; }
+        .back-btn { display: inline-block; background: transparent; color: var(--white); border: 2px solid var(--primary-color); padding: 12px 30px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: var(--transition); }
+        .back-btn:hover { background: var(--primary-color); color: var(--white); }
+
+        footer { background: #111; color: #888; padding: 40px 0; text-align: center; border-top: 1px solid #222; }
+        .footer-logo { font-size: 26px; font-weight: 900; color: var(--primary-color); margin-bottom: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo"><span>عتاد</span> للتوريدات</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="index.html#services">الأقسام</a></li>
+                    <li><a href="tawabin.html" style="color: var(--primary-color);">مطعم طوابين</a></li>
+                    <li><a href="lighting.html">معرض الإضاءة</a></li>
+                    <li><a href="index.html#contact" class="nav-btn">اطلب استشارة</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>تجهيزات وتصميم مطعم طوابين</h1>
+            <p>أحدث أعمالنا في توريد وتجهيز الديكورات وأدوات الضيافة الفاخرة لمطعم طوابين.</p>
+        </div>
+
+        <!-- صورة الكفر الرئيسية من بره -->
+        <div class="cover-section">
+            <div class="cover-img">
+                <img src="tawabin/cover.jpeg" alt="واجهة مطعم طوابين" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&q=80'">
+            </div>
+            <div class="cover-info">
+                <h2>مشروع مطعم طوابين المميز</h2>
+                <p>تم تنفيذ وتوريد كافة عناصر الديكور والإضاءة والمستلزمات بأعلى معايير الجودة العالمية لتلائم طابع المطعم الراقي.</p>
+                <a href="https://wa.me/201000000000?text=السلام عليكم، أرغب في الاستفسار عن تفاصيل تجهيزات مشروع مطعم طوابين" target="_blank" class="order-rest-btn" style="padding: 12px 25px; font-size: 16px;">
+                    <i class="fa-brands fa-whatsapp"></i> اطلب استشارة لتنفيذ مشروع مشابه
+                </a>
+            </div>
+        </div>
+
+        <!-- شبكة باقي الصور من جوه الفولدر -->
+        <div class="restaurant-grid">
+            <script>
+                let totalImages = 8; 
+                for (let i = 1; i <= totalImages; i++) {
+                    document.write(`
+                        <div class="rest-card">
+                            <div class="rest-img">
+                                <img src="tawabin/tawaben (${i}).jpeg" alt="تجهيزات طوابين موديل #${i}" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&q=80'">
+                            </div>
+                            <div class="rest-body">
+                                <h3>معرض طوابين - نموذج #${i}</h3>
+                                <a href="https://wa.me/201000000000?text=${encodeURIComponent('السلام عليكم، أرغب في الاستفسار عن تفاصيل تجهيزات مطعم طوابين - نموذج #' + i)}" target="_blank" class="order-rest-btn">
+                                    <i class="fa-brands fa-whatsapp"></i> اطلب هذا النموذج
+                                </a>
+                            </div>
+                        </div>
+                    `);
+                }
+            </script>
+        </div>
+
+        <div class="back-home">
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-right"></i> العودة إلى الصفحة الرئيسية</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <span class="footer-logo">عتاد</span>
+            <p>جميع الحقوق محفوظة © 2026 لمؤسسة عتاد للتوريدات.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

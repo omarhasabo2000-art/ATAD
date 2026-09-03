@@ -1,0 +1,461 @@
+/* --- نظام الهوية البصرية الفائق السلاسة والفخامة (عتاد) --- */
+:root {
+    --bg-main-tint: rgba(242, 235, 225, 0.95);
+    --bg-card: #FFFFFF;
+    --text-primary: #1A110A;
+    --text-secondary: #5E4D42;
+    --brand-dark: #2C1D11;     /* بني إسبريسو داكن وقوي */
+    --brand-accent: #C6922C;   /* ذهبي دافئ من ألوان الكتالوج */
+    --border-light: #D4C3B3;
+    
+    /* الظلال العادية وظلال التوهج الملون بلون الهوية عند التفاعل */
+    --shadow-subtle: 0 10px 30px -5px rgba(44, 29, 17, 0.08);
+    --shadow-accent-glow: 0 12px 28px -2px rgba(198, 146, 44, 0.45);
+    --shadow-card-hover: 0 20px 40px -10px rgba(44, 29, 17, 0.2), 0 0 20px rgba(198, 146, 44, 0.25);
+}
+
+/* إعدادات عامة وسلسة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background: linear-gradient(var(--bg-main-tint), var(--bg-main-tint)), 
+                url('https://images.unsplash.com/photo-1541123437800-1bb1317badc2') repeat;
+    background-size: 400px;
+    color: var(--text-primary);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* الهيدر العلوي */
+.main-header {
+    background-color: var(--bg-card);
+    box-shadow: 0 4px 20px rgba(44, 29, 17, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: 3px solid var(--brand-accent);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--brand-dark);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 700;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--brand-accent);
+}
+
+/* واجهة الموقع الرئيسية (Hero) */
+.hero {
+    text-align: center;
+    padding: 130px 0 100px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: #2C1D11;
+    color: #F2EBE1;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border: 1px solid var(--brand-accent);
+    box-shadow: 0 4px 10px rgba(44,29,17,0.15);
+}
+
+.hero h2 {
+    font-size: 44px;
+    font-weight: 900;
+    color: var(--brand-dark);
+    max-width: 900px;
+    margin: 0 auto 20px;
+    line-height: 1.4;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 750px;
+    margin: 0 auto 35px;
+    font-weight: 600;
+}
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* الأزرار مع توهج ملون عند التمرير */
+.btn-primary {
+    background-color: var(--brand-dark);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(44, 29, 17, 0.25);
+    will-change: transform, box-shadow;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary:hover {
+    background-color: #4A321F;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-accent-glow);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--brand-dark);
+    border: 2px solid var(--brand-dark);
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    will-change: transform, background-color, color, box-shadow;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--brand-dark);
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-accent-glow);
+}
+
+/* الأقسام العامة */
+section {
+    padding: 85px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 900;
+    color: var(--brand-dark);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: var(--brand-accent);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* قسم من نحن */
+.about-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-light);
+}
+
+.about-lead {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-box {
+    background-color: var(--bg-card);
+    padding: 35px 25px;
+    border-radius: 14px;
+    border: 2px solid var(--border-light);
+    text-align: center;
+    box-shadow: var(--shadow-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--brand-accent);
+}
+
+.feature-box h4 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--brand-dark);
+    margin-bottom: 12px;
+}
+
+.feature-box p {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+/* شبكة الكروت والأقسام */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    display: block;
+    height: 270px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    text-decoration: none;
+    box-shadow: var(--shadow-subtle);
+    border: 2px solid var(--border-light);
+    will-change: transform, box-shadow;
+    transform: translateZ(0);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--brand-accent);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(44,29,17,0.1), rgba(44,29,17,0.88));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    text-align: right;
+    transition: background 0.3s ease;
+}
+
+.card:hover .card-overlay {
+    background: linear-gradient(to bottom, rgba(44,29,17,0.05), rgba(44,29,17,0.72));
+}
+
+.card h4 {
+    font-size: 24px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.card p {
+    color: #F2EBE1;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.card-link-text {
+    color: var(--brand-accent);
+    font-size: 14px;
+    font-weight: 800;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .card-link-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* خلفيات الأقسام الرئيسية (اربطها بصورك في مجلد images لاحقاً) */
+.restaurant-bg { background-image: url('images/sec-restaurants.jpg'); }
+.materials-bg   { background-image: url('images/sec-materials.jpg'); }
+.lighting-bg    { background-image: url('images/sec-lighting.jpg'); }
+.hotels-bg      { background-image: url('images/sec-hotels.jpg'); }
+.tables-bg      { background-image: url('images/sec-tables.jpg'); }
+.decor-bg       { background-image: url('images/sec-decor.jpg'); }
+
+/* سابقة الأعمال */
+.portfolio-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-light);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid var(--border-light);
+    box-shadow: var(--shadow-subtle);
+    will-change: transform, box-shadow;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--brand-accent);
+}
+
+.portfolio-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* صور سابقة الأعمال من مجلد images */
+.tof-img { background-image: url('images/restaurant-1.jpg'); }
+.min-img { background-image: url('images/restaurant-2.jpg'); }
+.tab-img { background-image: url('images/restaurant-3.jpg'); }
+
+.portfolio-content {
+    padding: 25px;
+    text-align: right;
+}
+
+.portfolio-content h4 {
+    font-size: 21px;
+    font-weight: 900;
+    color: var(--brand-dark);
+    margin-bottom: 5px;
+}
+
+.portfolio-content span {
+    display: block;
+    font-size: 14px;
+    color: var(--brand-accent);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.portfolio-content p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* الشحن والتصدير */
+.logistics-section {
+    background: linear-gradient(135deg, #2C1D11, #1A110A);
+    color: #fff;
+    text-align: center;
+    padding: 70px 0;
+    border-top: 4px solid var(--brand-accent);
+    box-shadow: inset 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.logistics-section h3 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #F2EBE1;
+}
+
+.logistics-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #D4C3B3;
+    font-size: 17px;
+}
+
+/* التواصل */
+.contact-section {
+    text-align: center;
+}
+
+.contact-section p {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.contact-info {
+    display: inline-block;
+    background-color: var(--bg-card);
+    padding: 35px 55px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-subtle);
+    border: 2px solid var(--border-light);
+    text-align: right;
+}
+
+.contact-info p {
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: var(--brand-dark);
+}
+
+.contact-info a {
+    color: var(--brand-accent);
+    text-decoration: none;
+    font-weight: 800;
+}
+
+footer {
+    background-color: #120A05;
+    color: #D4C3B3;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
+    border-top: 2px solid var(--brand-dark);
+}

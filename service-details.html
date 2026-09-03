@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل القسم - شركة عتاد للتوريدات والتصدير</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .detail-card {
+            background: var(--bg-card, #fff);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 2px solid var(--border-light, #e0e0e0);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .detail-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .detail-img {
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+        }
+        .detail-info {
+            padding: 20px;
+            text-align: right;
+        }
+        .detail-info h4 {
+            color: var(--brand-dark, #333);
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .detail-info p {
+            color: var(--text-secondary, #666);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر العلوي -->
+    <header class="main-header">
+        <div class="container">
+            <!-- الضغط على اسم عتاد يوديك للرئيسية -->
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 class="logo" style="cursor: pointer;">عتاد</h1>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#services">الأقسام والخدمات</a>
+                <a href="index.html#contact">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- رأس الصفحة الديناميكي -->
+    <section class="hero" style="padding: 60px 0 20px;">
+        <div class="container">
+            <span class="hero-badge" id="category-badge">استعراض المنتجات</span>
+            <h2 id="category-title" style="font-size: 38px;">أقسام التوريدات</h2>
+            <p id="category-desc">استعرض تشكيلة مختارة من أرقى المنتجات والمستلزمات التجارية.</p>
+        </div>
+    </section>
+
+    <!-- شبكة المنتجات -->
+    <section style="padding: 30px 0 90px;">
+        <div class="container">
+            <div id="products-container" class="details-grid">
+                <!-- سيتم تعبئة المنتجات تلقائياً حسب القسم عن طريق الـ JavaScript -->
+            </div>
+
+            <!-- زر العودة -->
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html#services" class="btn-outline">العودة إلى الأقسام والخدمات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 شركة عتاد للتوريدات والتصدير</p>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const cat = urlParams.get('cat');
+
+        const titleElem = document.getElementById('category-title');
+        const badgeElem = document.getElementById('category-badge');
+        const descElem = document.getElementById('category-desc');
+        const container = document.getElementById('products-container');
+
+        const ext = ".jpeg"; 
+
+        if (cat === 'lighting') {
+            badgeElem.innerText = "قسم الإضاءة";
+            titleElem.innerText = "وحدات الإضاءة التراثية والحديثة";
+            descElem.innerText = "تشكيلة واسعة وفخمة من وحدات الإضاءة المصنوعة بعناية لتناسب أرقى المشروعات والمقاهي.";
+
+            let lightingHTML = '';
+            for (let i = 1; i <= 47; i++) {
+                lightingHTML += `
+                    <div class="detail-card">
+                        <div class="detail-img" style="background-image: url('images/LIGHT (${i})${ext}');"></div>
+                        <div class="detail-info">
+                            <h4>وحدة إضاءة طراز LIGHT (${i})</h4>
+                            <p>خامات طبيعية وعملية مصممة خصيصاً للاستخدام التجاري والديكور الفاخر.</p>
+                        </div>
+                    </div>
+                `;
+            }
+            container.innerHTML = lightingHTML;
+
+        } else if (cat === 'restaurants') {
+            badgeElem.innerText = "قسم المطاعم والكافيهات";
+            titleElem.innerText = "تجهيز المطاعم والكافيهات";
+            descElem.innerText = "حلول متكاملة ومخصصة لتجهيز وتأثيث أرقى المطاعم والمقاهي بمعايير تجارية عالية.";
+            
+            container.innerHTML = `
+                <div class="detail-card">
+                    <div class="detail-img" style="background-image: url('images/tawaben-1.jpeg');"></div>
+                    <div class="detail-info">
+                        <h4>جلسات الممرات الخارجية</h4>
+                        <p>تجهيز طاولات ومقاعد مريحة ومتناسقة مع الهوية العامة للمكان.</p>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-img" style="background-image: url('images/tawaben-2.jpeg');"></div>
+                    <div class="detail-info">
+                        <h4>محطات الضيافة والاستقبال</h4>
+                        <p>تصاميم عملية وأنيقة لتسهيل حركة تقديم الخدمة والضيافة.</p>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-img" style="background-image: url('images/tawaben-3.jpeg');"></div>
+                    <div class="detail-info">
+                        <h4>تجهيزات البار والأركان</h4>
+                        <p>أرفف ووحدات تخزين وعمل مصممة خصيصاً للمقاهي والمطاعم.</p>
+                    </div>
+                </div>
+            `;
+
+        } else if (cat === 'materials') {
+            badgeElem.innerText = "الخامات الطبيعية";
+            titleElem.innerText = "أصالة الخامات الطبيعية المستدامة";
+            descElem.innerText = "تشكيلة من البامبو، الرتان، الكانيه، والخيش الطبيعي المستدام والمتميز.";
+            
+            container.innerHTML = `
+                <div class="detail-card">
+                    <div class="detail-img" style="background-image: url('images/LIGHT (44).jpeg');"></div>
+                    <div class="detail-info">
+                        <h4>مشغولات الرتان الطبيعي</h4>
+                        <p>خامات يدوية الصنع تجمع بين متانة الاستخدام التجاري وجمال الطبيعة.</p>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-img" style="background-image: url('images/LIGHT (34).jpeg');"></div>
+                    <div class="detail-info">
+                        <h4>إكسسوارات الخيش والبامبو</h4>
+                        <p>لمسات ديكورية طبيعية تعزز من دفء وفخامة التصميم الداخلي.</p>
+                    </div>
+                </div>
+            `;
+
+        } else if (cat === 'hotels') {
+            badgeElem.innerText = "الفنادق والمنتجعات";
+            titleElem.innerText = "تجهيز الفنادق والمنتجعات السياحية";
+            descElem.innerText = "تأثيث غرف الضيافة والمساحات العامة بأعلى درجات الراحة والأناقة العالمية.";
+            
+            container.innerHTML = `
+                <div class="detail-card">
+                    <div class="detail-img" style="background-image: url('images/tawaben-1.jpeg');"></div>
+                    <div class="detail-info">
+                        <h4>تجهيزات الغرف الفندقية</h4>
+                        <p>أثاث عصري ومريح مصمم ليدوم طويلاً ويمنح النزلاء تجربة استثنائية.</p>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-img" style="background-image: url('images/tawaben-2.jpeg');"></div>
+                    <div class="detail-info">
+                        <h4>مستلزمات الاستقبال واللوبي</h4>
+                        <p>قطع ديكور وأثاث فاخر تعكس هوية فخمة لزوار الفندق.</p>
+                    </div>
+                </div>
+            `;
+
+        } else if (cat === 'tables') {
+            badgeElem.innerText = "الطاولات والمقاعد";
+            titleElem.innerText = "الطاولات والمقاعد العملية التجارية";
+            descElem.innerText = "تشكيلة واسعة من الطاولات والمقاعد المصممة لتناسب كافة المساحات والأذواق.";
+            
+            container.innerHTML = `
+                <div class="detail-card">
+                    <div class="detail-img" style="background-image: url('images/tawaben-3.jpeg');"></div>
+                    <div class="detail-info">
+                        <h4>طاولات الضيافة والمطاعم</h4>
+                        <p>طاولات ثابتة وعملية تتحمل ظروف الاستخدام اليومي المكثف.</p>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-img" style="background-image: url('images/tawaben-1.jpeg');"></div>
+                    <div class="detail-info">
+                        <h4>المقاعد التراثية والعصرية</h4>
+                        <p>مقاعد مريحة مصممة بعناية لتناسب المساحات الداخلية والخارجية.</p>
+                    </div>
+                </div>
+            `;
+
+        } else if (cat === 'decor') {
+            badgeElem.innerText = "الديكور والتراث";
+            titleElem.innerText = "إكسسوارات الديكور والتراث الفني";
+            descElem.innerText = "لمسات فنية أخيرة وإكسسوارات ديكورية تكتمل بها هوية مشروعك الفريدة.";
+            
+            container.innerHTML = `
+                <div class="detail-card">
+                    <div class="detail-img" style="background-image: url('images/tawaben-2.jpeg');"></div>
+                    <div class="detail-info">
+                        <h4>لوحات ولافتات الإرشاد التراثية</h4>
+                        <p>تصاميم مخصصة تعكس هوية العلامة التجارية بلمسة تراثية ساحرة.</p>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-img" style="background-image: url('images/LIGHT (36).jpeg');"></div>
+                    <div class="detail-info">
+                        <h4>الإكسسوارات المضيئة والتحف</h4>
+                        <p>قطع فنية ووحدات إضاءة فريدة تضفي طابعاً جمالياً لا يُنسى.</p>
+                    </div>
+                </div>
+            `;
+
+        } else {
+            badgeElem.innerText = "قسم التوريدات";
+            titleElem.innerText = "منتجات القسم المطلوبة";
+            descElem.innerText = "جاري عرض تفاصيل المنتجات والتشكيلات الخاصة بهذا القسم.";
+            container.innerHTML = `
+                <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                    <h3>عذراً، يرجى اختيار قسم صالح من القائمة الرئيسية.</h3>
+                    <br>
+                    <a href="index.html#services" class="btn-primary" style="display:inline-block; padding:10px 25px; background:var(--brand-accent); color:#fff; border-radius:8px; text-decoration:none;">العودة للأقسام</a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

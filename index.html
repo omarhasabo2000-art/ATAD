@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عتاد للتوريدات - شريكك الموثوق للتوريدات التجارية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #c5a059;
+            --primary-dark: #a88746;
+            --secondary-color: #1a1a1a;
+            --dark-gray: #333333;
+            --light-gray: #f7f9fa;
+            --border-color: #eaeaea;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--light-gray); color: var(--dark-gray); line-height: 1.8; overflow-x: hidden; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .section-padding { padding: 80px 0; }
+
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 36px; font-weight: 800; color: var(--secondary-color); position: relative; display: inline-block; margin-bottom: 15px; }
+        .section-title h2::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background-color: var(--primary-color); border-radius: 2px; }
+        .section-title p { color: #666; font-size: 16px; max-width: 600px; margin: 0 auto; }
+
+        header { background: var(--white); padding: 10px 0; position: fixed; width: 100%; top: 0; z-index: 9999; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: var(--transition); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-img { height: 50px; width: auto; display: block; transition: var(--transition); }
+        .logo-img:hover { opacity: 0.9; transform: scale(1.02); }
+
+        nav ul { list-style: none; display: flex; gap: 25px; align-items: center; }
+        nav ul li a { text-decoration: none; color: var(--secondary-color); font-weight: 700; font-size: 15px; transition: var(--transition); }
+        nav ul li a:hover { color: var(--primary-color); }
+        .nav-btn { background: var(--primary-color); color: var(--white) !important; padding: 10px 20px; border-radius: 8px; }
+        .nav-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+        .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding-top: 80px; }
+        .hero-content { max-width: 800px; }
+        .hero-badge { background: rgba(197, 160, 89, 0.2); border: 1px solid var(--primary-color); color: var(--primary-color); padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 700; display: inline-block; margin-bottom: 20px; }
+        .hero h1 { font-size: 48px; font-weight: 900; margin-bottom: 20px; line-height: 1.4; }
+        .hero p { font-size: 18px; color: #ddd; margin-bottom: 40px; }
+        .hero-btns { display: flex; gap: 20px; justify-content: center; }
+        .btn-primary, .btn-outline { padding: 15px 35px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: var(--transition); display: inline-block; text-align: center; }
+        .btn-primary { background: var(--primary-color); color: var(--white); border: 2px solid var(--primary-color); }
+        .btn-primary:hover { background: transparent; color: var(--primary-color); }
+        .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+        .btn-outline:hover { background: var(--white); color: var(--secondary-color); }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
+        .service-card { background: var(--light-gray); padding: 40px 25px; border-radius: 16px; text-align: center; transition: var(--transition); border: 1px solid var(--border-color); position: relative; overflow: hidden; z-index: 1; text-decoration: none; display: block; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 0; background: var(--secondary-color); transition: var(--transition); z-index: -1; }
+        .service-card:hover::before { height: 100%; }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card:hover h3, .service-card:hover p { color: var(--white); }
+        .service-card i { font-size: 40px; color: var(--primary-color); margin-bottom: 15px; }
+        .service-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; color: var(--secondary-color); }
+        .service-card p { font-size: 13px; color: #666; }
+
+        .portfolio-section { background: var(--white); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto; }
+        .portfolio-card { background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .portfolio-img { height: 250px; width: 100%; position: relative; background: #eee; }
+        .portfolio-img img { width: 100%; height: 100%; object-fit: cover; }
+        .portfolio-body { padding: 30px; }
+        .portfolio-tag { color: var(--primary-color); font-size: 13px; font-weight: 700; display: block; margin-bottom: 8px; }
+        .portfolio-body h3 { font-size: 20px; font-weight: 800; color: var(--secondary-color); margin-bottom: 12px; }
+        .portfolio-body p { color: #666; font-size: 15px; margin-bottom: 20px; }
+
+        .export-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .feature-box { display: flex; gap: 20px; align-items: flex-start; }
+        .feature-icon { width: 60px; height: 60px; background: rgba(197, 160, 89, 0.1); border: 1px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--primary-color); flex-shrink: 0; }
+        .feature-text h3 { font-size: 20px; margin-bottom: 10px; color: var(--secondary-color); font-weight: 800; }
+        .feature-text p { color: #666; font-size: 14px; }
+
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+        .contact-info { background: var(--primary-color); color: var(--white); padding: 50px; }
+        .contact-info h3 { font-size: 28px; margin-bottom: 20px; font-weight: 800; }
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; font-size: 16px; }
+        .info-item i { font-size: 20px; background: rgba(255,255,255,0.2); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .contact-form { padding: 50px; }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 700; color: var(--secondary-color); }
+        .input-group input, .input-group textarea { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: var(--light-gray); font-family: 'Cairo', sans-serif; }
+        .submit-btn { background: var(--secondary-color); color: var(--white); border: none; width: 100%; padding: 15px; border-radius: 8px; font-size: 16px; font-weight: 800; cursor: pointer; transition: var(--transition); }
+        .submit-btn:hover { background: var(--primary-color); }
+
+        footer { background: #111; color: #888; padding: 60px 0 20px; text-align: center; }
+        .footer-logo-img { height: 45px; width: auto; margin-bottom: 15px; filter: brightness(0) invert(1); display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html">
+                <img src="logo.png" alt="ATAD Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">الرئيسية</a></li>
+                    <li><a href="index.html#services">أقسامنا</a></li>
+                    <li><a href="index.html#portfolio">سابقة الأعمال</a></li>
+                    <li><a href="lighting.html">معرض الإضاءة</a></li>
+                    <li><a href="tawabin.html">مطعم طوابين</a></li>
+                    <li><a href="index.html#export">خدمات التصدير</a></li>
+                    <li><a href="https://wa.me/201012345678" target="_blank" class="nav-btn"><i class="fa-brands fa-whatsapp"></i> اطلب استشارة</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">شريكك التجاري من مصر للخليج</span>
+                <h1>نلبي كافة احتياجات مشاريعك بأعلى جودة وأفضل سعر</h1>
+                <p>متخصصون في توريد وتصدير تجهيزات المطاعم، الإضاءة، والأثاث للمملكة العربية السعودية ودول الخليج.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/201012345678" target="_blank" class="btn-primary"><i class="fa-brands fa-whatsapp"></i> اطلب استشارة فورية</a>
+                    <a href="lighting.html" class="btn-outline">شاهد معرض الإضاءة</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الأقسام الأساسية -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>أقسام التوريدات والمعارض</h2>
+                <p>اختر القسم المطلوب للاطلاع على تفاصيل الخدمات والمنتجات المتاحة للتصدير.</p>
+            </div>
+            <div class="services-grid">
+                <a href="restaurants.html" class="service-card">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>تجهيزات المطاعم</h3>
+                    <p>معدات وأدوات مائدة احترافية.</p>
+                </a>
+                <a href="lighting.html" class="service-card">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>الإضاءة والديكور</h3>
+                    <p>وحدات إضاءة تراثية ومودرن.</p>
+                </a>
+                <a href="furniture.html" class="service-card">
+                    <i class="fa-solid fa-couch"></i>
+                    <h3>الأثاث والستائر</h3>
+                    <p>أثاث فندقي وتجاري مخصص.</p>
+                </a>
+                <a href="wrapping.html" class="service-card">
+                    <i class="fa-solid fa-box-open"></i>
+                    <h3>التغليف المخصص</h3>
+                    <p>شنط وعبوات بشعار مشروعك.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- سابقة الأعمال -->
+    <section id="portfolio" class="portfolio-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>سابقة الأعمال والمشروعات</h2>
+                <p>نماذج حية من ثقة عملائنا الكرام في توريد وتجهيز المشروعات الكبرى</p>
+            </div>
+            <div class="portfolio-grid">
+                <!-- مطعم طوابين -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="tawabin/cover.jpeg" alt="مطعم طوابين" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&q=80'">
+                    </div>
+                    <div class="portfolio-body">
+                        <span class="portfolio-tag">تجهيز مطاعم</span>
+                        <h3>مطعم طوابين</h3>
+                        <p>توريد وتجهيز كامل بالمستلزمات، الأثاث، والإضاءات الديكورية الخاصة بالمشروع.</p>
+                        <a href="tawabin.html" class="nav-btn" style="display:inline-block; text-decoration:none; font-size:14px;"><i class="fa-solid fa-eye"></i> استعرض معرض طوابين</a>
+                    </div>
+                </div>
+
+                <!-- مشروع منزال (تمت إرجاع الاسم والمسار زي ما طلبت تماماً) -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="manazil/cover.jpg" alt="مشروع منزال" onerror="this.src='https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500&q=80'">
+                    </div>
+                    <div class="portfolio-body">
+                        <span class="portfolio-tag">تجهيز كافيهات ومطاعم</span>
+                        <h3>مشروع منزال</h3>
+                        <p>توريد وتجهيز متكامل، وحدات إضاءة مخصصة، ومقاعد عصرية تعزز الهوية البصرية للمكان.</p>
+                        <a href="manazil.html" class="nav-btn" style="display:inline-block; text-decoration:none; font-size:14px;"><i class="fa-solid fa-eye"></i> استعرض معرض منازل</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="export" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>خدمات التصدير للسعودية والخليج</h2>
+                <p>تسهيلات لوجستية كاملة من باب المصنع إلى موقع مشروعك.</p>
+            </div>
+            <div class="export-features">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <div class="feature-text">
+                        <h3>شحن سريع وموثوق</h3>
+                        <p>شراكات مع كبرى شركات الشحن لضمان وصول بضاعتك بأمان وفي الموعد.</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <div class="feature-text">
+                        <h3>تخليص جمركي متكامل</h3>
+                        <p>استخراج كافة الشهادات لتسهيل دخول البضائع للمملكة.</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <div class="feature-text">
+                        <h3>فحص الجودة</h3>
+                        <p>مراجعة دقيقة لجميع الطلبيات قبل الشحن لضمان مطابقتها للمواصفات.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding" style="background: var(--light-gray);">
+        <div class="container">
+            <div class="section-title">
+                <h2>تواصل مع المبيعات</h2>
+                <p>اطلب عرض سعر تنافسي لتجهيز مشروعك الآن.</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+                    <p style="margin-bottom: 30px; opacity: 0.9;">مقرنا في مصر، ونصدر مباشرة لكافة دول الخليج العربي.</p>
+                    <div class="info-item"><i class="fa-solid fa-location-dot"></i><div><strong>المقر:</strong><br>جمهورية مصر العربية</div></div>
+                    <div class="info-item"><i class="fa-brands fa-whatsapp"></i><div><strong>واتساب:</strong><br><span dir="ltr">+20 1012345678</span></div></div>
+                    <div class="info-item"><i class="fa-solid fa-envelope"></i><div><strong>البريد:</strong><br>Ibrahimhasabo110@gmail.com</div></div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://wa.me/201012345678" method="get" target="_blank">
+                        <div class="input-group"><label>الاسم / الشركة</label><input type="text" name="text" placeholder="اكتب اسمك أو شركتك هنا..." required></div>
+                        <div class="input-group"><label>تفاصيل الطلب</label><textarea rows="4" name="text" placeholder="اكتب تفاصيل مشروعك أو استفسارك..." required></textarea></div>
+                        <button type="submit" class="submit-btn"><i class="fa-brands fa-whatsapp"></i> إرسال الطلب عبر واتساب</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="index.html">
+                <img src="logo.png" alt="ATAD Logo" class="footer-logo-img">
+            </a>
+            <p>جميع الحقوق محفوظة © 2026 لمؤسسة عتاد للتوريدات.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '8px 0';
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 4px 15px rgba(0,0,0,0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
