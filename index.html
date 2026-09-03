@@ -35,25 +35,25 @@
         .logo-img { height: 50px; width: auto; display: block; transition: var(--transition); }
         .logo-img:hover { opacity: 0.9; transform: scale(1.02); }
 
-        nav ul { list-style: none; display: flex; gap: 25px; align-items: center; }
-        nav ul li a { text-decoration: none; color: var(--secondary-color); font-weight: 700; font-size: 15px; transition: var(--transition); }
+        nav ul { list-style: none; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+        nav ul li a { text-decoration: none; color: var(--secondary-color); font-weight: 700; font-size: 14px; transition: var(--transition); }
         nav ul li a:hover { color: var(--primary-color); }
-        .nav-btn { background: var(--primary-color); color: var(--white) !important; padding: 10px 20px; border-radius: 8px; }
+        .nav-btn { background: var(--primary-color); color: var(--white) !important; padding: 8px 16px; border-radius: 8px; }
         .nav-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
-        .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding-top: 80px; }
-        .hero-content { max-width: 800px; }
+        .hero { height: 100vh; min-height: 600px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding-top: 80px; }
+        .hero-content { max-width: 800px; padding: 0 15px; }
         .hero-badge { background: rgba(197, 160, 89, 0.2); border: 1px solid var(--primary-color); color: var(--primary-color); padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 700; display: inline-block; margin-bottom: 20px; }
         .hero h1 { font-size: 48px; font-weight: 900; margin-bottom: 20px; line-height: 1.4; }
         .hero p { font-size: 18px; color: #ddd; margin-bottom: 40px; }
-        .hero-btns { display: flex; gap: 20px; justify-content: center; }
+        .hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         .btn-primary, .btn-outline { padding: 15px 35px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: var(--transition); display: inline-block; text-align: center; }
         .btn-primary { background: var(--primary-color); color: var(--white); border: 2px solid var(--primary-color); }
         .btn-primary:hover { background: transparent; color: var(--primary-color); }
         .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
         .btn-outline:hover { background: var(--white); color: var(--secondary-color); }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
         .service-card { background: var(--light-gray); padding: 40px 25px; border-radius: 16px; text-align: center; transition: var(--transition); border: 1px solid var(--border-color); position: relative; overflow: hidden; z-index: 1; text-decoration: none; display: block; }
         .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 0; background: var(--secondary-color); transition: var(--transition); z-index: -1; }
         .service-card:hover::before { height: 100%; }
@@ -64,7 +64,7 @@
         .service-card p { font-size: 13px; color: #666; }
 
         .portfolio-section { background: var(--white); }
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto; }
         .portfolio-card { background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
         .portfolio-img { height: 250px; width: 100%; position: relative; background: #eee; }
         .portfolio-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -73,7 +73,7 @@
         .portfolio-body h3 { font-size: 20px; font-weight: 800; color: var(--secondary-color); margin-bottom: 12px; }
         .portfolio-body p { color: #666; font-size: 15px; margin-bottom: 20px; }
 
-        .export-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .export-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
         .feature-box { display: flex; gap: 20px; align-items: flex-start; }
         .feature-icon { width: 60px; height: 60px; background: rgba(197, 160, 89, 0.1); border: 1px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--primary-color); flex-shrink: 0; }
         .feature-text h3 { font-size: 20px; margin-bottom: 10px; color: var(--secondary-color); font-weight: 800; }
@@ -82,8 +82,8 @@
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
         .contact-info { background: var(--primary-color); color: var(--white); padding: 50px; }
         .contact-info h3 { font-size: 28px; margin-bottom: 20px; font-weight: 800; }
-        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; font-size: 16px; }
-        .info-item i { font-size: 20px; background: rgba(255,255,255,0.2); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; font-size: 16px; word-break: break-word; }
+        .info-item i { font-size: 20px; background: rgba(255,255,255,0.2); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
         .contact-form { padding: 50px; }
         .input-group { margin-bottom: 20px; }
         .input-group label { display: block; margin-bottom: 8px; font-weight: 700; color: var(--secondary-color); }
@@ -93,6 +93,24 @@
 
         footer { background: #111; color: #888; padding: 60px 0 20px; text-align: center; }
         .footer-logo-img { height: 45px; width: auto; margin-bottom: 15px; filter: brightness(0) invert(1); display: inline-block; }
+
+        /* Media Queries للتجاوب التام مع كل الشاشات (موبايل، تابلت، آيباد، لابتوب) */
+        @media (max-width: 992px) {
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 38px; }
+        }
+
+        @media (max-width: 768px) {
+            header .container { flex-direction: column; gap: 10px; padding: 10px 0; }
+            nav ul { justify-content: center; gap: 12px; }
+            nav ul li a { font-size: 13px; }
+            .hero { height: auto; padding: 140px 0 80px; }
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 16px; }
+            .section-padding { padding: 50px 0; }
+            .section-title h2 { font-size: 28px; }
+            .contact-info, .contact-form { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -109,7 +127,7 @@
                     <li><a href="index.html#portfolio">سابقة الأعمال</a></li>
                     <li><a href="lighting.html">معرض الإضاءة</a></li>
                     <li><a href="tawabin.html">مطعم طوابين</a></li>
-                    <li><a href="index.html#export">خدمات التصدير</a></li>
+                    <li><a href="manazil.html">مشروع منازل</a></li>
                     <li><a href="https://wa.me/201012345678" target="_blank" class="nav-btn"><i class="fa-brands fa-whatsapp"></i> اطلب استشارة</a></li>
                 </ul>
             </nav>
@@ -183,14 +201,14 @@
                     </div>
                 </div>
 
-                <!-- مشروع منزال (تمت إرجاع الاسم والمسار زي ما طلبت تماماً) -->
+                <!-- مشروع منازل -->
                 <div class="portfolio-card">
                     <div class="portfolio-img">
-                        <img src="manazil/cover.jpg" alt="مشروع منزال" onerror="this.src='https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500&q=80'">
+                        <img src="manazil/cover.jpg" alt="مشروع منازل" onerror="this.src='https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500&q=80'">
                     </div>
                     <div class="portfolio-body">
                         <span class="portfolio-tag">تجهيز كافيهات ومطاعم</span>
-                        <h3>مشروع منزال</h3>
+                        <h3>مشروع منازل</h3>
                         <p>توريد وتجهيز متكامل، وحدات إضاءة مخصصة، ومقاعد عصرية تعزز الهوية البصرية للمكان.</p>
                         <a href="manazil.html" class="nav-btn" style="display:inline-block; text-decoration:none; font-size:14px;"><i class="fa-solid fa-eye"></i> استعرض معرض منازل</a>
                     </div>
