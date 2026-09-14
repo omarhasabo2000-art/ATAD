@@ -2,42 +2,41 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <!-- إعدادات الموبايل والتجاوب -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="theme-color" content="#c5a059"> <!-- لون شريط المتصفح في الموبايل -->
+    <meta name="theme-color" content="#c5a059">
     
-    <!-- تحسين محركات البحث (SEO) الاحترافي -->
     <title>عتاد للتوريدات | شريكك الموثوق لتجهيزات المطاعم والمشاريع التجارية</title>
     <meta name="description" content="شركة عتاد للتوريدات - نلبي كافة احتياجات مشاريعك بأعلى جودة. متخصصون في توريد وتصدير تجهيزات المطاعم، الإضاءة، والأثاث من مصر للمملكة العربية السعودية ودول الخليج.">
     <meta name="keywords" content="عتاد للتوريدات, تجهيزات مطاعم, أثاث فندقي, وحدات إضاءة, تصدير السعودية, توريدات تجارية, مطعم طوابين, مشروع منزال">
     <meta name="author" content="عتاد للتوريدات">
     <meta name="robots" content="index, follow">
     
-    <!-- أيقونة الموقع (Favicon) -->
     <link rel="icon" type="image/png" href="images/logo1.png">
-    <link rel="apple-touch-icon" href="images/logo1.png"> <!-- لأجهزة أبل -->
+    <link rel="apple-touch-icon" href="images/logo1.png">
     
-    <!-- تحميل الخطوط والأيقونات بشكل أسرع -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"></noscript>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
-    <!-- ربط ملف التنسيقات المتطور -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- ================= القائمة العلوية ================= -->
     <header id="main-header">
-        <div class="container">
-            <a href="index.html" aria-label="الرئيسية - عتاد للتوريدات">
+        <div class="container header-container">
+            <a href="index.html" aria-label="الرئيسية - عتاد للتوريدات" class="logo-link">
                 <img src="images/logo1.png" alt="شعار شركة عتاد للتوريدات" class="logo-img" loading="lazy" onerror="this.src='logo.png'">
             </a>
-            <nav aria-label="القائمة الرئيسية">
+            
+            <!-- زرار الموبايل الجديد (Hamburger Icon) -->
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav aria-label="القائمة الرئيسية" id="mainNav">
                 <ul>
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#services">أقسام التوريدات</a></li>
@@ -46,8 +45,7 @@
                     <li><a href="tawabin.html">مطعم طوابين</a></li>
                     <li><a href="manazil.html">مشروع منزال</a></li>
                     <li><a href="https://wa.me/201012923982" target="_blank" rel="noopener noreferrer" class="nav-btn"><i class="fa-brands fa-whatsapp"></i> تواصل معنا</a></li>
-                    <!-- زرار تحويل اللغة للإنجليزية -->
-                    <li><a href="en.html" style="color: var(--primary-color); font-weight: 900; font-size: 16px;"><i class="fa-solid fa-globe"></i> English</a></li>
+                    <li><a href="en.html" class="lang-btn"><i class="fa-solid fa-globe"></i> English</a></li>
                 </ul>
             </nav>
         </div>
@@ -68,7 +66,7 @@
         </div>
     </section>
 
-    <!-- ================= أقسام الخدمات والتوريدات ================= -->
+    <!-- ================= أقسام الخدمات ================= -->
     <section id="services" class="section-padding">
         <div class="container">
             <div class="section-title">
@@ -76,22 +74,22 @@
                 <p>اختر القسم المطلوب للاطلاع على تفاصيل الخدمات والمنتجات الاحترافية المتاحة للتصدير.</p>
             </div>
             <div class="services-grid">
-                <a href="restaurants.html" class="service-card" aria-label="قسم تجهيزات المطاعم">
+                <a href="restaurants.html" class="service-card">
                     <i class="fa-solid fa-utensils"></i>
                     <h3>تجهيزات المطاعم</h3>
                     <p>توريد معدات مطابخ وأدوات مائدة احترافية تناسب أرقى المطاعم والكافيهات.</p>
                 </a>
-                <a href="lighting.html" class="service-card" aria-label="قسم الإضاءة والديكور">
+                <a href="lighting.html" class="service-card">
                     <i class="fa-solid fa-lightbulb"></i>
                     <h3>الإضاءة والديكور</h3>
                     <p>تشكيلة واسعة من وحدات الإضاءة التراثية والمودرن التي تضفي طابعاً فريداً.</p>
                 </a>
-                <a href="furniture.html" class="service-card" aria-label="قسم الأثاث والستائر">
+                <a href="furniture.html" class="service-card">
                     <i class="fa-solid fa-couch"></i>
                     <h3>الأثاث والستائر</h3>
                     <p>تصميم وتوريد أثاث فندقي وتجاري مخصص يلبي معايير الجودة العالمية.</p>
                 </a>
-                <a href="wrapping.html" class="service-card" aria-label="قسم التغليف المخصص">
+                <a href="wrapping.html" class="service-card">
                     <i class="fa-solid fa-box-open"></i>
                     <h3>التغليف المخصص</h3>
                     <p>حلول تغليف متكاملة تشمل شنط وعبوات مطبوعة بشعار مشروعك الخاص.</p>
@@ -100,7 +98,7 @@
         </div>
     </section>
 
-    <!-- ================= سابقة الأعمال والمشاريع ================= -->
+    <!-- ================= سابقة الأعمال ================= -->
     <section id="portfolio" class="portfolio-section section-padding">
         <div class="container">
             <div class="section-title">
@@ -109,37 +107,29 @@
             </div>
             <div class="portfolio-grid">
                 
-                <!-- مشروع مطعم طوابين -->
                 <article class="portfolio-card">
                     <div class="portfolio-img">
-                        <!-- مسار الصورة القديم الصحيح -->
                         <img src="tawabin/cover.jpeg" alt="تجهيزات مطعم طوابين" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&q=80'">
-                        <div class="portfolio-overlay">
-                            <i class="fa-solid fa-link"></i>
-                        </div>
+                        <div class="portfolio-overlay"><i class="fa-solid fa-link"></i></div>
                     </div>
                     <div class="portfolio-body">
                         <span class="portfolio-tag">تجهيز مطاعم متكامل</span>
                         <h3>مطعم طوابين</h3>
                         <p>قمنا بتوريد وتجهيز كامل للمطعم، شمل المستلزمات الأساسية، الأثاث المخصص، والإضاءات الديكورية التي تتناسب مع هوية المشروع.</p>
-                        <a href="tawabin.html" class="nav-btn" style="display:inline-flex; font-size:14px; padding: 8px 18px; margin-top: 10px;">استعراض التفاصيل <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i></a>
+                        <a href="tawabin.html" class="nav-btn-link">استعراض التفاصيل <i class="fa-solid fa-arrow-left"></i></a>
                     </div>
                 </article>
 
-                <!-- مشروع منزال -->
                 <article class="portfolio-card">
                     <div class="portfolio-img">
-                        <!-- مسار الصورة القديم الصحيح -->
                         <img src="manazil/cover.jpg" alt="تجهيزات مشروع منزال" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500&q=80'">
-                        <div class="portfolio-overlay">
-                            <i class="fa-solid fa-link"></i>
-                        </div>
+                        <div class="portfolio-overlay"><i class="fa-solid fa-link"></i></div>
                     </div>
                     <div class="portfolio-body">
                         <span class="portfolio-tag">تجهيز كافيهات راقية</span>
                         <h3>مشروع منزال</h3>
                         <p>تنفيذ وتوريد تجهيز متكامل يشمل وحدات إضاءة مخصصة، ومقاعد عصرية مصممة خصيصاً لتعزيز الهوية البصرية وخلق تجربة مميزة للزوار.</p>
-                        <a href="manazil.html" class="nav-btn" style="display:inline-flex; font-size:14px; padding: 8px 18px; margin-top: 10px;">استعراض التفاصيل <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i></a>
+                        <a href="manazil.html" class="nav-btn-link">استعراض التفاصيل <i class="fa-solid fa-arrow-left"></i></a>
                     </div>
                 </article>
 
@@ -147,7 +137,7 @@
         </div>
     </section>
 
-    <!-- ================= مميزات التصدير والخدمات اللوجستية ================= -->
+    <!-- ================= مميزات التصدير ================= -->
     <section id="export" class="section-padding">
         <div class="container">
             <div class="section-title">
@@ -159,28 +149,28 @@
                     <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
                     <div class="feature-text">
                         <h3>شحن سريع وموثوق</h3>
-                        <p>نمتلك شراكات استراتيجية مع كبرى شركات الشحن الدولي لضمان وصول البضائع بأمان تام وفي الموعد المحدد دون تأخير.</p>
+                        <p>نمتلك شراكات استراتيجية مع كبرى شركات الشحن الدولي لضمان وصول البضائع بأمان تام وفي الموعد المحدد.</p>
                     </div>
                 </div>
                 <div class="feature-box">
                     <div class="feature-icon"><i class="fa-solid fa-file-contract"></i></div>
                     <div class="feature-text">
                         <h3>تخليص جمركي متكامل</h3>
-                        <p>نتولى عنك كافة الإجراءات الورقية واستخراج الشهادات اللازمة لتسهيل دخول البضائع للمملكة العربية السعودية بكل سلاسة.</p>
+                        <p>نتولى عنك كافة الإجراءات الورقية واستخراج الشهادات اللازمة لتسهيل دخول البضائع للمملكة.</p>
                     </div>
                 </div>
                 <div class="feature-box">
                     <div class="feature-icon"><i class="fa-solid fa-clipboard-check"></i></div>
                     <div class="feature-text">
                         <h3>رقابة صارمة على الجودة</h3>
-                        <p>تخضع جميع الطلبيات لمراجعة وفحص دقيق قبل الشحن لضمان مطابقتها للمواصفات المطلوبة بنسبة 100%.</p>
+                        <p>تخضع جميع الطلبيات لمراجعة وفحص دقيق قبل الشحن لضمان مطابقتها للمواصفات المطلوبة.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= قسم التواصل والمبيعات ================= -->
+    <!-- ================= التواصل ================= -->
     <section id="contact" class="section-padding" style="background-color: var(--light-gray);">
         <div class="container">
             <div class="section-title">
@@ -188,36 +178,14 @@
                 <p>يسعدنا الرد على استفساراتكم. اطلب عرض سعر تنافسي لتجهيز مشروعك الآن.</p>
             </div>
             <div class="contact-wrapper">
-                
-                <!-- معلومات التواصل -->
                 <div class="contact-info">
                     <h3>معلومات التواصل</h3>
                     <p>مقرنا الرئيسي في مصر، ونقوم بالتصدير المباشر لكافة دول الخليج العربي لضمان توفير أفضل جودة بأنسب سعر.</p>
-                    
-                    <div class="info-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <strong>المقر الإداري:</strong><br>
-                            جمهورية مصر العربية
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <div>
-                            <strong>واتساب المبيعات:</strong><br>
-                            <span dir="ltr">+20 10 12923982</span>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-envelope"></i>
-                        <div>
-                            <strong>البريد الإلكتروني:</strong><br>
-                            <a href="mailto:Ibrahimhasabo110@gmail.com" style="color: white; text-decoration: none;">Ibrahimhasabo110@gmail.com</a>
-                        </div>
-                    </div>
+                    <div class="info-item"><i class="fa-solid fa-location-dot"></i><div><strong>المقر الإداري:</strong><br>جمهورية مصر العربية</div></div>
+                    <div class="info-item"><i class="fa-brands fa-whatsapp"></i><div><strong>واتساب المبيعات:</strong><br><span dir="ltr">+20 10 12923982</span></div></div>
+                    <div class="info-item"><i class="fa-solid fa-envelope"></i><div><strong>البريد الإلكتروني:</strong><br><a href="mailto:Ibrahimhasabo110@gmail.com" style="color: white; text-decoration: none;">Ibrahimhasabo110@gmail.com</a></div></div>
                 </div>
                 
-                <!-- نموذج التواصل عبر الواتساب -->
                 <div class="contact-form">
                     <form id="whatsappForm" onsubmit="sendWhatsApp(event)">
                         <div class="input-group">
@@ -226,32 +194,25 @@
                         </div>
                         <div class="input-group">
                             <label for="clientMessage">تفاصيل الطلب أو الاستفسار</label>
-                            <textarea id="clientMessage" rows="5" placeholder="برجاء كتابة تفاصيل مشروعك أو استفسارك هنا، وسنقوم بالرد عليك في أسرع وقت..." required></textarea>
+                            <textarea id="clientMessage" rows="5" placeholder="برجاء كتابة تفاصيل مشروعك أو استفسارك هنا..." required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">
-                            <i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i> 
-                            إرسال الطلب عبر واتساب
-                        </button>
+                        <button type="submit" class="submit-btn"><i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i> إرسال الطلب عبر واتساب</button>
                     </form>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    <!-- ================= تذييل الصفحة (Footer) ================= -->
     <footer>
         <div class="container">
-            <a href="index.html" aria-label="الرئيسية">
-                <img src="images/logo1.png" alt="ATAD Logo" class="footer-logo-img" loading="lazy" onerror="this.src='logo.png'">
-            </a>
+            <a href="index.html" aria-label="الرئيسية"><img src="images/logo1.png" alt="ATAD Logo" class="footer-logo-img" loading="lazy" onerror="this.src='logo.png'"></a>
             <p>جميع الحقوق محفوظة &copy; 2026 لمؤسسة عتاد للتوريدات.</p>
         </div>
     </footer>
 
     <!-- ================= سكربتات الموقع ================= -->
     <script>
-        // تأثير الشفافية للهيدر عند التمرير لأسفل
+        // 1. تأثير الشفافية للهيدر
         window.addEventListener('scroll', function() {
             var header = document.getElementById('main-header');
             if (window.scrollY > 50) {
@@ -263,20 +224,35 @@
             }
         });
 
-        // وظيفة إرسال نموذج التواصل إلى واتساب
+        // 2. تشغيل قائمة الموبايل الاحترافية
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active'); // إظهار أو إخفاء القائمة
+            if (mainNav.classList.contains('active')) {
+                mobileBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>'; // علامة خطأ (إغلاق)
+            } else {
+                mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>'; // علامة القائمة
+            }
+        });
+
+        // إغلاق القائمة تلقائياً لما العميل يضغط على أي رابط
+        const navLinks = document.querySelectorAll('#mainNav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        // 3. إرسال الواتساب
         function sendWhatsApp(event) {
-            event.preventDefault(); // منع إعادة تحميل الصفحة
-            
+            event.preventDefault(); 
             const phoneNumber = "201012923982"; 
-            
-            // جلب البيانات من النموذج
             const name = document.getElementById('clientName').value;
             const message = document.getElementById('clientMessage').value;
-            
-            // تجهيز الرسالة
             const text = `مرحباً عتاد للتوريدات،%0A%0A*الاسم / الشركة:* ${name}%0A*الاستفسار:* ${message}`;
-            
-            // إنشاء الرابط وفتحه في نافذة جديدة
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
             window.open(whatsappUrl, '_blank');
         }
